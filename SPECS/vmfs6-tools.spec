@@ -33,6 +33,8 @@ BuildRequires:  libuuid-devel
 BuildRequires:  libxslt
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(fuse)
+# XCP-ng
+BuildRequires:  gcc
 
 %define ext_man .gz
 
@@ -96,6 +98,7 @@ install -m0644 libvmfs/*.h "%{buildroot}%{_includedir}/libvmfs6/"
 - Import from OpenSuSE and build for XCP-ng 8.3
 - Adjust package name for Docbook XSL styleshets
 - Adjust ext_man macro to find gzipped manpages
+- Add gcc in breqs so it builds in our koji
 
 * Thu Aug 29 2024 Martin Hauke <mardnh@gmx.de>
 - Initial package on obs for vmfs6-tools
