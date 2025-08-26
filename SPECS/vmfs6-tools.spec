@@ -18,7 +18,7 @@
 
 Name:           vmfs6-tools
 Version:        0.2.1
-Release:        lp160.1.6
+Release:        lp160.1.6.1%{?dist}
 Summary:        Tools to access VMFS6 filesystems
 License:        GPL-2.0-or-later
 Group:          System/Filesystems
@@ -28,11 +28,13 @@ URL:            https://github.com/teward/vmfs6-tools
 Source:         https://github.com/teward/vmfs6-tools/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Patch1:         vmfs-tools-uuid
 BuildRequires:  asciidoc
-BuildRequires:  docbook-xsl-stylesheets
+BuildRequires:  docbook-style-xsl
 BuildRequires:  libuuid-devel
 BuildRequires:  libxslt
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(fuse)
+
+%define ext_man .gz
 
 %description
 Originally loosely based on the vmfs code from fluidOps, this set of tools has
@@ -90,6 +92,11 @@ install -m0644 libvmfs/*.h "%{buildroot}%{_includedir}/libvmfs6/"
 %{_includedir}/libvmfs6
 
 %changelog
+* Tue Aug 26 2025 Yann Dirson <yann.dirson@vates.tech> - 0.2.1-lp160.1.6.1
+- Import from OpenSuSE and build for XCP-ng 8.3
+- Adjust package name for Docbook XSL styleshets
+- Adjust ext_man macro to find gzipped manpages
+
 * Thu Aug 29 2024 Martin Hauke <mardnh@gmx.de>
 - Initial package on obs for vmfs6-tools
   based on filesystems/vmfs-tools
