@@ -1,4 +1,7 @@
-RPM sources for the vmfs6-tools package in XCP-ng (https://xcp-ng.org/).
+RPM sources for the vmfs6-tools package for XCP-ng (https://xcp-ng.org/).
+
+This package is not part of XCP-ng, but only provided as-is in the
+separate xcp-ng-lab repository.
 
 Make sure to have `git-lfs` installed before cloning. It is used for handling source archives separately.
 
